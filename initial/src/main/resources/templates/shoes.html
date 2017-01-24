@@ -1,0 +1,25 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Getting Started: Serving Web Content</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+    <table>
+      <tr>
+        <td>Brand</td>
+        <td>Style</td>
+        <td>Sizes</td>
+        <td>Rating</td>
+      </tr>
+      <th:block th:each="shoes : ${shoes}">
+        <tr>
+            <td th:text="${shoes.make}">...</td>
+            <td th:text="${shoes.model}">...</td>
+            <td th:text="${#strings.listJoin(shoes.sizes, ', ')}">...</td>
+            <td th:text="${shoes.rating}">...</td>
+        </tr>
+      </th:block>
+    </table>
+</body>
+</html>
